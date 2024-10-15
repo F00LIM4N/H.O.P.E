@@ -19,6 +19,8 @@ security:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+                username_parameter: name-user
+                password_parameter: pswd-user
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
