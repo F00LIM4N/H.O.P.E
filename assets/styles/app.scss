@@ -1,1 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
+
+.bg-gradient-header {
+  background: linear-gradient(90deg, #8a4dff, #ffffff);
+}
+.section-partners img {
+  width: 150px;
+  margin: 10px;
+}
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.orange-btn {
+  background-color: #FF9317;
+  color: white;
+  border: none;
+}
+.orange-btn:hover {
+  background-color: #E98718;
+  color: white;
+}
+.bg-purple {
+  background-color: #784cfc;
+  color: white;
+}
+.testimonial-section, .interactive-section {
+  padding: 50px 0;
+}
