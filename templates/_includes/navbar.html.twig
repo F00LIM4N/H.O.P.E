@@ -1,63 +1,66 @@
-
-<nav class="d-flex justify-content-between align-items-center px-3 position-sticky top-0 z-2">
-    <div class="d-flex align-items-center">
-        <a href="/">
+<nav class="navbar navbar-expand-lg position-sticky top-0 z-2">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
             <img src="/images/logo_transparent.svg" alt="Logo" class="img-fluid w-25">
         </a>
-    </div>
-
-    <div class="d-flex align-items center gap-3">
-        <div>
-            <a href="/discover">
-                <button class="btn btn-light rounded-pill">
-                    Découvrir H.O.P.E
-                </button>
-            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/discover">
+                        <button class="btn btn-light rounded-pill">
+                            Découvrir H.O.P.E
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/resources">
+                        <button class="btn btn-light rounded-pill">
+                            Ressources éducatives
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/offers">
+                        <button class="btn btn-light rounded-pill">
+                            Offres
+                        </button>
+                    </a>
+                </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <button class="btn btn-light rounded-pill">
+                                Profil
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">
+                            <button class="btn btn-light rounded-pill">
+                                Se déconnecter
+                            </button>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">
+                            <button class="btn btn-light rounded-pill">
+                                Se connecter
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_inscription') }}">
+                            <button class="btn btn-light rounded-pill">
+                                S'inscrire
+                            </button>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
-        <div>
-            <a href="/resources">
-                <button class="btn btn-light rounded-pill">
-                    Ressources éducatives
-                </button>
-            </a>
-        </div>
-        <div>
-            <a href="/offers">
-                <button class="btn btn-light rounded-pill">
-                    Offres
-                </button>
-            </a>
-        </div>
-        {% if app.user %}
-            <div>
-                <a href="">
-                    <button class="btn btn-light rounded-pill">
-                        Profil
-                    </button>
-                </a>
-            </div>
-            <div>
-                <a href="{{ path('app_logout') }}">
-                    <button class="btn btn-light rounded-pill">
-                        Se déconnecter
-                    </button>
-                </a>
-            </div>
-        {% else %}
-            <div>
-                <a href="{{ path('app_login') }}">
-                    <button class="btn btn-light rounded-pill">
-                        Se connecter
-                    </button>
-                </a>
-            </div>
-            <div>
-                <a href="{{ path('app_inscription') }}">
-                    <button class="btn btn-light rounded-pill">
-                        S'inscrire
-                    </button>
-                </a>
-            </div>
-        {% endif %}
     </div>
 </nav>
