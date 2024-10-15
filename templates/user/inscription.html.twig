@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>BLABLABLA JE SUIS LE HEADER</h1>
+    </header>
+    <section>
+        <form action="{{ path('app_created') }}" method="post">
+            <div class="mb-3">
+                <label for="name-user" class="form-label">name</label>
+                <input type="text" class="form-control" id="name-user" name="name-user" required>
+            </div>
+            <div class="mb-3">
+                <label for="pswd-user" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pswd-user" name="pswd-user" required>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label" for="birth-user">BirthDate</label>
+                <input type="date" class="form-check-input" id="birth-user" name="birth-user" required>
+            </div>
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+{% endblock %}
