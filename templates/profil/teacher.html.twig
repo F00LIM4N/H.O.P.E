@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil Enseignant{% endblock %}
+
+{% block body %}
+<div class="container-fluid profile-teacher mt-5">
+    <div class="row">
+        <!-- Sidebar gauche -->
+        <div class="col-md-3 bg-light p-3 rounded" style="background-color: #F4F1FF;">
+            <div class="profile-sidebar text-center">
+                <img src="/images/avatar_teacher.png" alt="Avatar enseignant" class="img-fluid rounded-circle mb-3" width="150">
+                <p class="text-muted" style="color: #FF9317;">Collège Port Marianne</p>
+                <p class="text-muted" style="color: #FF9317;">id: 245245</p>
+
+                <nav class="nav flex-column mt-4">
+                    <a class="nav-link active" href="#" style="color: #7C54FF;">Mon compte</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Mes classes</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Formations</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Notes et Évaluations</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Relevé de Notes</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Ressources Pédagogiques</a>
+                    <a class="nav-link" href="#" style="color: #7C54FF;">Communauté et Support</a>
+                </nav>
+
+                <a href="{{ path('app_logout') }}" class="btn btn-warning btn-block mt-4" style="background-color: #FF9317; color: white;">Déconnexion</a>
+
+                <img src="/images/logo_hope.png" alt="Logo HOPE" class="img-fluid mt-4 w-50">
+            </div>
+        </div>
+
+        <!-- Section principale -->
+        <div class="col-md-9">
+            <h1 class="text-primary" style="color: #7C54FF;">Formation</h1>
+
+            <div class="d-flex align-items-center">
+                <span class="badge" style="background-color: #FF9317; color: white; padding: 10px 15px; border-radius: 25px;">Classe : 4B ↓</span>
+            </div>
+
+            <!-- Formation terminée -->
+            <section class="mt-5">
+                <h3 style="color: #7C54FF;">Formation terminée !</h3>
+                <div class="list-group mb-4">
+                    <div class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #FFEFDE;">
+                        <span class="font-weight-bold">Introduction à la cybersécurité</span>
+                        <span class="badge" style="background-color: #00D082; color: white;">Terminée !</span>
+                        <span class="badge" style="background-color: #7C54FF; color: white;">Cybersécurité</span>
+                        <span class="badge" style="background-color: #F4F1FF; color: #7C54FF;">14/20</span>
+                        <span class="text-muted">21/22 élèves</span>
+                        <a href="#" class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formation en cours -->
+            <section class="mt-4">
+                <h3 style="color: #7C54FF;">Formation en cours :</h3>
+                <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #FFEFDE;">
+                        <span class="font-weight-bold">Les dangers des réseaux sociaux</span>
+                        <span class="badge" style="background-color: #FF9317; color: white;">En cours</span>
+                        <span class="badge" style="background-color: #7C54FF; color: white;">Réseaux sociaux</span>
+                        <span class="badge" style="background-color: #F4F1FF; color: #7C54FF;">17/20</span>
+                        <span class="text-muted">13/20 élèves</span>
+                        <a href="#" class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #FFEFDE;">
+                        <span class="font-weight-bold">Cyberharcèlement</span>
+                        <span class="badge" style="background-color: #FF9317; color: white;">En cours</span>
+                        <span class="badge" style="background-color: #7C54FF; color: white;">Réseaux sociaux</span>
+                        <span class="badge" style="background-color: #F4F1FF; color: #7C54FF;">16/20</span>
+                        <span class="text-muted">16/20 élèves</span>
+                        <a href="#" class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formation à démarrer -->
+            <section class="mt-4">
+                <h3 style="color: #7C54FF;">Formation à démarrer :</h3>
+                <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #FFEFDE;">
+                        <span class="font-weight-bold">Phishing et ingénierie sociale</span>
+                        <span class="badge" style="background-color: #7C54FF; color: white;">Sociale</span>
+                        <a href="#" class="btn btn-primary" style="background-color: #7C54FF; border-color: #7C54FF;">Commencer →</a>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #FFEFDE;">
+                        <span class="font-weight-bold">Fakenews et désinformation</span>
+                        <span class="badge" style="background-color: #7C54FF; color: white;">Réseaux sociaux</span>
+                        <a href="#" class="btn btn-primary" style="background-color: #7C54FF; border-color: #7C54FF;">Commencer →</a>
+                    </div>
+                </div>
+            </section>
+
+            <p class="text-muted text-center mt-5" style="color: #7C54FF;">Plus de modules à venir prochainement…</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

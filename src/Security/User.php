@@ -39,21 +39,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getRoles(): array
     {
-        $roles = [];
-
         switch ($this->role_user) {
             case 1:
-                $roles[] = 'ROLE_ADMIN';
+                $this->roles[] = 'ROLE_TEACHER';
+                break;
+            case 2:
+                $this->roles[] = 'ROLE_STUDENT';
                 break;
             default:
-                $roles[] = 'ROLE_USER';
+                $this->roles[] = 'ROLE_USER';
         }
 
-        return array_unique($roles);
+        return array_unique($this->roles);
     }
 
-    public function eraseCredentials()
+
+    // Ajout de la méthode pour accéder à name_user
+    public function getNameUser(): string
     {
-        // Si vous stockez des informations sensibles, vous pouvez les effacer ici
+        return $this->name_user;
     }
 }

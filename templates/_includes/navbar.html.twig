@@ -29,9 +29,10 @@
                         </button>
                     </a>
                 </li>
+
                 {% if app.user %}
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ path('app_profil') }}">
                             <button class="btn btn-light rounded-pill">
                                 Profil
                             </button>
