@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Offres{% endblock %}
+
+{% block body %}
+    <header class="bg-gradient-header text-white text-center py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <h1 class="display-4">Découvrez HOPE</h1>
+                    <p class="mt-3">
+                        Une solution éducative pour protéger les jeunes sur les réseaux sociaux grâce à des modules interactifs.
+                    </p>
+                    <button class="btn orange-btn btn-lg mt-4">Nos offres</button>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="/images/discover_image.png" alt="Illustration découverte" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="text-center py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <h1 class="mb-4" style="color: #FFAF34;">Nos offres adaptées à vos besoins</h1>
+        <p class="lead">Des solutions flexibles pour protéger vos jeunes, quel que soit votre budget</p>
+        <div class="row justify-content-center">
+            <!-- Carte Offre Essentielle -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-4 mb-5 bg-white rounded">
+                    <h3 class="card-title text-center" style="color: #665EFF;">Offre Essentielle (Gratuite)</h3>
+                    <div class="card-body">
+                        <p>Accédez gratuitement à une sélection de modules pour sensibiliser les jeunes à la sécurité en ligne.</p>
+                        <ul class="list-unstyled">
+                            <li>Introduction à la sécurité des réseaux sociaux</li>
+                            <li>Sensibilisation au cyberharcèlement</li>
+                            <li>Guide sur la protection des données personnelles</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" style="background-color: #665EFF;">Démarrer gratuitement</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Offre Particuliers -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-4 mb-5 bg-white rounded">
+                    <h3 class="card-title text-center" style="color: #665EFF;">Offre Particuliers – 9,99 €/mois</h3>
+                    <div class="card-body">
+                        <p>Une offre complète pour une éducation numérique à domicile avec du contenu exclusif.</p>
+                        <ul class="list-unstyled">
+                            <li>Accès à tous les modules (sécurité, gestion du temps d'écran, etc.)</li>
+                            <li>Suivi personnalisé des progrès</li>
+                            <li>Conseils pratiques pour les parents</li>
+                            <li>Assistance prioritaire en ligne</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" style="background-color: #665EFF;">S'abonner maintenant</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Offre Enseignement -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-4 mb-5 bg-white rounded">
+                    <h3 class="card-title text-center" style="color: #665EFF;">Offre Enseignement (Prix sur devis)</h3>
+                    <div class="card-body">
+                        <p>Conçue pour les établissements scolaires, cette offre inclut tous les modules et des outils pédagogiques pour les enseignants.</p>
+                        <ul class="list-unstyled">
+                            <li>Accès à tous les modules pour les élèves</li>
+                            <li>Suivi des progrès et rapports détaillés</li>
+                            <li>Outils pédagogiques pour les enseignants</li>
+                            <li>Support dédié et formation</li>
+                        </ul>
+                        <button class="btn btn-warning w-100">Demander un devis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5 text-center">
+    <div class="container">
+        <h2>Choisissez une offre qui correspond à vos besoins</h2>
+        <p class="lead mt-4">Que vous soyez un particulier, un enseignant ou une école, nous avons une solution qui vous convient.</p>
+        <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+            <span class="badge bg-primary p-3" style="font-size: 1.2rem;"><a href="{{ path('app_data_protection') }}" class="badge bg-primary p-3" style="font-size: 1.2rem;">
+    Protection des données</a></span>
+            <span class="badge bg-warning p-3" style="font-size: 1.2rem;">Sensibilisation au cyberharcèlement</span>
+            <span class="badge bg-primary p-3" style="font-size: 1.2rem;">Modules interactifs</span>
+            <span class="badge bg-warning p-3" style="font-size: 1.2rem;">Suivi des progrès</span>
+            <span class="badge bg-primary p-3" style="font-size: 1.2rem;">Support pédagogique</span>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

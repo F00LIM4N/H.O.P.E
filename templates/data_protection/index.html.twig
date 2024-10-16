@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Protection des Données{% endblock %}
+
+{% block body %}
+<header class="bg-primary text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4">Module 1 - Protection des Données</h1>
+        <h2 class="mt-3">Pourquoi la protection de vos données personnelles est importante ?</h2>
+        <button class="btn btn-warning mt-4">Qu'est-ce que la protection des données ?</button>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container d-flex flex-row align-items-center">
+        <!-- Image explicative -->
+        <div class="col-md-6 text-center">
+            <img src="/images/data_protection_image.png" alt="Protection des Données" class="img-fluid rounded">
+        </div>
+
+        <!-- Explication du concept -->
+        <div class="col-md-6">
+            <p class="lead">
+                La protection des données consiste à assurer la sécurité des informations personnelles qui sont partagées en ligne.
+                Vos données personnelles incluent des informations sensibles comme votre nom, votre adresse e-mail, vos données bancaires,
+                ainsi que d'autres éléments d'identification. Sur Internet, il est essentiel de prendre des mesures pour les protéger.
+            </p>
+
+            <h3 class="mt-4">Exemple concret :</h3>
+            <p class="mt-2">
+                Imagine que tu t'inscrives sur un réseau social et que tu partages des informations personnelles sans te rendre compte 
+                qu'elles sont accessibles à tout le monde. Cela pourrait permettre à des personnes mal intentionnées de les utiliser
+                pour te nuire. La protection de tes données est donc une question de sécurité et de confidentialité.
+            </p>
+
+            <!-- Question interactive -->
+            <div class="bg-light p-4 rounded shadow-sm mt-4">
+                <h5 class="mb-3">Est-ce que tu partages trop d'informations en ligne ?</h5>
+                <label class="me-3">
+                    <input type="radio" name="data_sharing" value="oui"> Oui
+                </label>
+                <label>
+                    <input type="radio" name="data_sharing" value="non"> Non
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

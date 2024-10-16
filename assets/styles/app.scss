@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/bootstrap";
+
+.bg-gradient-header {
+  background: linear-gradient(90deg, #8a4dff, #ffffff);
+}
+.orange-btn {
+  background-color: #FF9317;
+  color: white;
+  border: none;
+}
+.orange-btn:hover {
+  background-color: #E98718;
+  color: white;
+}
+.bg-purple {
+  background-color: #784cfc;
+  color: white;
+}

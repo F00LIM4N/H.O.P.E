@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Découvrir HOPE{% endblock %}
+
+{% block body %}
+    <header class="bg-gradient-header text-white text-center py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <h1 class="display-4">Découvrez HOPE</h1>
+                    <p class="mt-3">
+                        Une solution éducative pour protéger les jeunes sur les réseaux sociaux grâce à des modules interactifs.
+                    </p>
+                    <button class="btn orange-btn btn-lg mt-4">Nos offres</button>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="/images/discover_image.png" alt="Illustration découverte" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Nos offres adaptées à vos besoins</h2>
+            <p class="lead">Des solutions flexibles pour protéger vos jeunes, quel que soit votre budget</p>
+            <div class="row">
+                <!-- Carte Offre Essentielle -->
+                <div class="col-md-4">
+                    <div class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
+                        <h3 class="card-title text-center">Offre Essentielle (Gratuite)</h3>
+                        <div class="card-body">
+                            <p>Accédez gratuitement à une sélection de modules pour sensibiliser les jeunes à la sécurité en ligne.</p>
+                            <ul class="list-unstyled">
+                                <li>Introduction à la sécurité</li>
+                                <li>Sensibilisation au cyberharcèlement</li>
+                                <li>Guide sur la protection des données</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Démarrer</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte Offre Particuliers -->
+                <div class="col-md-4">
+                    <div class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
+                        <h3 class="card-title text-center">Offre Particuliers – 9,99 €/mois</h3>
+                        <div class="card-body">
+                            <p>Une offre complète pour une éducation numérique à domicile avec du contenu exclusif.</p>
+                            <ul class="list-unstyled">
+                                <li>Accès à tous les modules</li>
+                                <li>Suivi personnalisé des progrès</li>
+                                <li>Conseils pour les parents</li>
+                                <li>Assistance prioritaire</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Démarrer</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte Offre Enseignement -->
+                <div class="col-md-4">
+                    <div class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
+                        <h3 class="card-title text-center">Offre Enseignement (Prix sur devis)</h3>
+                        <div class="card-body">
+                            <p>Conçue pour les établissements scolaires, cette offre inclut tous les modules et des outils supplémentaires pour les enseignants.</p>
+                            <ul class="list-unstyled">
+                                <li>Accès à tous les modules pour les élèves</li>
+                                <li>Suivi des progrès et rapports</li>
+                                <li>Outils pédagogiques pour les enseignants</li>
+                                <li>Support dédié</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h2>Dans nos offres, il y a :</h2>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                <span class="badge bg-primary p-3">Introduction à la cybersécurité</span>
+                <span class="badge bg-warning p-3">Les dangers des réseaux sociaux</span>
+                <span class="badge bg-primary p-3">Cyberharcèlement</span>
+                <span class="badge bg-warning p-3">Phishing et ingénierie sociale</span>
+                <span class="badge bg-warning p-3">Fakenews et désinformation</span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

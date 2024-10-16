@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="d-flex">
+    <!-- Partie gauche avec le visuel -->
+    <div class="left-section" style="background-color: #665EFF; width: 50%; display: flex; align-items: center; justify-content: center;">
+        <img src="/images/inscription_image.png" alt="Inscription HOPE" class="img-fluid">
+    </div>
+
+    <!-- Partie droite avec le formulaire -->
+    <div class="right-section" style="width: 50%; padding: 4rem; background-color: #f8f9fa;">
+        <h2 style="color: #FFAF34; font-family: 'Roboto', sans-serif;">Inscription</h2>
+        <h1 style="color: #343A40; font-family: 'Roboto', sans-serif;">Créer un compte</h1>
+
+        <form method="post">
+            <div class="form-group mb-4">
+                <label for="name" class="form-label">Nom complet</label>
+                <input type="text" class="form-control" id="name" name="name-user" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email-user" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="pswd-user" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="birth" class="form-label">Date de naissance</label>
+                <input type="date" class="form-control" id="birth" name="birth-user" required>
+            </div>
+
+            <!-- Choix du rôle -->
+            <div class="form-group mb-4">
+                <label class="form-label">Je suis :</label>
+                <div class="d-flex gap-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role-user" id="roleStudent" value="student" checked>
+                        <label class="form-check-label" for="roleStudent">
+                            Étudiant
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role-user" id="roleTeacher" value="teacher">
+                        <label class="form-check-label" for="roleTeacher">
+                            Enseignant
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+
+            <button type="submit" class="btn btn-lg btn-warning w-100 mb-3" style="background-color: #FFAF34; border: none;">
+                S'INSCRIRE
+            </button>
+
+            <div class="text-center">
+                <p class="text-muted">ou</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-google"></i> Google</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
