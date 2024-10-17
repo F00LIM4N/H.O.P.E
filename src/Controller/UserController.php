@@ -42,20 +42,25 @@ class UserController extends AbstractController
         $identite = $request->get('name-user');
         $hashedPswd = $passwordHasher->hash($request->get('pswd-user'));
         $birth = $request->get('birth-user');
+        $role_form = $request->get('role-user');
 
-        $this->userManager->inscription($identite, $hashedPswd, $birth);
+        if ($role_form == 'teacher') {
+            $role = 1;
+        } else {
+            $role = 2;
+        }
+
+        $this->userManager->inscription($identite, $hashedPswd, $birth, $role);
         $id_user = $this->userManager->getNewUser($identite, $birth);
 
-        // Crée un utilisateur avec un rôle par défaut
         $user = new User([
             'id_user' => $id_user,
             'name_user' => $identite,
             'pswd_user' => $hashedPswd,
-            'role_user' => 2, // ROLE_STUDENT par défaut
+            'role_user' => $role,
             'birth_user' => $birth,
         ]);
 
-        // Connexion automatique après inscription
         $security->login($user);
 
         return $this->redirectToRoute('app_profil');

@@ -21,10 +21,6 @@ security:
                 enable_csrf: true
                 username_parameter: name-user
                 password_parameter: pswd-user
-            # activation des utilisateurs connectés
-            remember_me:
-                secret: '%kernel.secret%'
-                lifetime: 604800 # 7 jours en secondes
 
     access_control:
         - { path: ^/profil }

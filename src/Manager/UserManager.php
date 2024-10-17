@@ -22,7 +22,7 @@ class UserManager
         return $result ?: null;
     }
 
-    public function inscription($nom_user, $pswd_user, $birth)
+    public function inscription($nom_user, $pswd_user, $birth, $role)
     {
         try {
             $this->connection->executeStatement('
@@ -33,7 +33,7 @@ class UserManager
                 'name_user' => $nom_user,
                 'pswd_user' => $pswd_user,
                 'birth_user' => $birth,
-                'role_user' => 0
+                'role_user' => $role
             ]);
 
             return true;
