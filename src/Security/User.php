@@ -53,10 +53,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return array_unique($this->roles);
     }
 
-
-    // Ajout de la méthode pour accéder à name_user
     public function getNameUser(): string
     {
         return $this->name_user;
+    }
+
+    public function eraseCredentials()
+    {
+        // Si vous stockez des informations sensibles, vous pouvez les effacer ici
     }
 }

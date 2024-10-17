@@ -14,12 +14,9 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
 {
-    private UserManager $userManager;
-
-    public function __construct(UserManager $userManager)
-    {
-        $this->userManager = $userManager;
-    }
+    public function __construct(
+        private UserManager $userManager,
+    ){  }
 
     #[Route('/connexion', name: 'app_login')]
     public function connexion(AuthenticationUtils $authenticationUtils): Response
@@ -69,25 +66,23 @@ class UserController extends AbstractController
     {
         $user = $security->getUser();
 
-        // Si l'utilisateur n'est pas connecté, redirection vers la page de connexion
         if (!$user) {
             return $this->redirectToRoute('app_login');
         }
 
         $roles = $user->getRoles();
 
-        // Redirection en fonction du rôle de l'utilisateur
+        $route = '';
+
         if (in_array('ROLE_TEACHER', $roles)) {
-            return $this->redirectToRoute('app_profil_teacher');
+            $route = $this->redirectToRoute('app_profil_teacher');
         } elseif (in_array('ROLE_STUDENT', $roles)) {
-            return $this->redirectToRoute('app_profil_student');
+            $route = $this->redirectToRoute('app_profil_student');
         }
 
-        // Si aucun rôle spécifique n'est trouvé, redirection vers la page d'accueil
-        return $this->redirectToRoute('app_home');
+        return $route;
     }
 
-    // Profil enseignant
     #[Route('/profil/enseignant', name: 'app_profil_teacher')]
     public function profilTeacher(Security $security): Response
     {
@@ -101,7 +96,6 @@ class UserController extends AbstractController
         ]);
     }
 
-    // Profil étudiant
     #[Route('/profil/etudiant', name: 'app_profil_student')]
     public function profilStudent(Security $security): Response
     {
@@ -113,26 +107,6 @@ class UserController extends AbstractController
         return $this->render('profil/student.html.twig', [
             'user' => $user,
         ]);
-    }
-
-    #[Route('/home', name: 'app_home')]
-    public function home(Security $security): Response
-    {
-        $user = $security->getUser();
-        if (!$user) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        $roles = $user->getRoles();
-
-        // Redirection vers la page de profil selon le rôle
-        if (in_array('ROLE_TEACHER', $roles)) {
-            return $this->redirectToRoute('app_profil_teacher');
-        } elseif (in_array('ROLE_STUDENT', $roles)) {
-            return $this->redirectToRoute('app_profil_student');
-        }
-
-        return $this->redirectToRoute('app_login');
     }
 
     #[Route('/logout', name: 'app_logout')]
