@@ -19,31 +19,31 @@ l'utilisateur.
 
 ## Environnement de développement
 
-## En local
-### Installer les dépendances :
+### En local
+#### Installer les dépendances :
 ```shell
 composer install
 ```
 ```shell
 npm install
 ```
-### Compilation avec Webpack :
+#### Compilation avec Webpack :
 ```shell
 npm run watch
 ```
 
-### Lancer le server :
+#### Lancer le server :
 ```shell
 symfony serve
 ```
 
-## Pour démarrer le projet
+### Pour démarrer le projet
 - Dupliquer le fichier env et le rennomer en ".env.local";
 - Démarrer un serveur.
 
 ## Environnement de production
 
-### Premières tâches :
+### Prérequis :
 - vérifier que les variables d'environnements sont correctes (APP_ENV=prod, etc ...)
 - installer les dépendaces :
 ```shell
